@@ -1,0 +1,335 @@
+/* ===== SOCIAL BANNER ===== */
+.fanzone__social-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 3rem;
+  border: 1px solid rgba(200,16,46,0.25);
+}
+
+.fanzone__social-text {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.fanzone__social-links {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.fanzone__social-chip {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+  padding: 0.4rem 0.9rem;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.fanzone__social-chip:hover {
+  background: var(--chip-color, var(--rcb-red));
+  border-color: var(--chip-color, var(--rcb-red));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* ===== SECTION HEADINGS ===== */
+.fanzone__section {
+  margin-bottom: 3.5rem;
+}
+
+.fanzone__section-title {
+  font-size: 1.7rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+/* ===== NEWS GRID ===== */
+.fanzone__news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.fanzone__news-card {
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.fanzone__news-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.5);
+}
+
+.fanzone__news-img-wrap {
+  position: relative;
+  height: 170px;
+  overflow: hidden;
+}
+
+.fanzone__news-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.4s ease;
+}
+
+.fanzone__news-card:hover .fanzone__news-img {
+  transform: scale(1.06);
+}
+
+.fanzone__news-body {
+  padding: 1rem 1.1rem 1.2rem;
+}
+
+.fanzone__news-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.45;
+  margin-bottom: 0.5rem;
+}
+
+.fanzone__news-summary {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===== POLLS ===== */
+.polls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.poll {
+  padding: 1.5rem;
+}
+
+.poll__question {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+
+.poll__options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.poll__option {
+  position: relative;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  cursor: pointer;
+  text-align: left;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  overflow: hidden;
+  transition: border-color 0.2s ease, color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.poll__option:hover:not(:disabled) {
+  border-color: rgba(200,16,46,0.5);
+  color: #fff;
+}
+
+.poll__option.selected {
+  border-color: var(--rcb-red);
+  color: #fff;
+}
+
+.poll__option.voted {
+  cursor: default;
+}
+
+.poll__option-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: rgba(200,16,46,0.18);
+  border-radius: 7px;
+  transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.poll__option.selected .poll__option-bar {
+  background: rgba(200,16,46,0.3);
+}
+
+.poll__option-text {
+  position: relative;
+  z-index: 1;
+}
+
+.poll__option-pct {
+  position: relative;
+  z-index: 1;
+  font-weight: 800;
+  color: var(--rcb-gold);
+  font-size: 0.82rem;
+}
+
+.poll__meta {
+  font-size: 0.73rem;
+  color: var(--text-secondary);
+  text-align: right;
+}
+
+/* ===== FORUM ===== */
+.forum__form {
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.forum__form-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--rcb-gold);
+}
+
+.forum__input,
+.forum__textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 0.65rem 0.9rem;
+  color: #fff;
+  font-size: 0.88rem;
+  font-family: inherit;
+  resize: none;
+  outline: none;
+  transition: border-color 0.2s ease;
+  margin-bottom: 0.75rem;
+}
+
+.forum__input:focus,
+.forum__textarea:focus {
+  border-color: rgba(200,16,46,0.6);
+}
+
+.forum__input::placeholder,
+.forum__textarea::placeholder {
+  color: var(--text-secondary);
+}
+
+.forum__submit {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* ===== COMMENTS ===== */
+.forum__comments {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.comment {
+  padding: 1rem 1.25rem;
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+}
+
+.comment__avatar {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  background: var(--rcb-light-grey);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comment__body {
+  flex: 1;
+}
+
+.comment__meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.comment__user {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.comment__time {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+}
+
+.comment__text {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.comment__like {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: none;
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.comment__like:hover {
+  border-color: var(--rcb-red);
+  color: var(--rcb-red);
+}
+
+.comment__like.liked {
+  background: rgba(200,16,46,0.15);
+  border-color: var(--rcb-red);
+  color: var(--rcb-red);
+}

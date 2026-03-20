@@ -1,0 +1,276 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0.4rem 0;
+  background: linear-gradient(180deg, rgba(8, 8, 8, 0.97) 0%, rgba(18, 18, 18, 0.95) 100%);
+  border-bottom: none;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.38);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: box-shadow 0.3s ease, padding 0.3s ease;
+}
+
+.navbar--scrolled {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.48);
+  padding: 0.32rem 0;
+}
+
+.navbar__container {
+  width: 100%;
+  margin: 0;
+  padding: 0 1.3rem 0 0.55rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* --- Brand group: logo + slogan locked together on the left --- */
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+  margin-right: 0.7rem;
+}
+
+.navbar__logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.navbar__logo-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.navbar__logo-img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  background: transparent;
+  transition: transform 0.2s ease;
+}
+
+.navbar__logo:hover .navbar__logo-img {
+  transform: scale(1.05);
+}
+
+/* Fallback RCB pill if image fails */
+.navbar__logo-fallback {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, var(--rcb-red), #8B0000);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__logo-fallback-text {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.navbar__logo-label {
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+  color: var(--rcb-gold);
+  line-height: 1;
+}
+
+/* --- Desktop Nav --- */
+.navbar__links {
+  display: flex;
+  gap: 0.15rem;
+  margin-left: auto;
+}
+
+.navbar__link {
+  color: #f2f2f2;
+  font-size: 0.94rem;
+  font-weight: 700;
+  letter-spacing: 0.25px;
+  padding: 0.45rem 0.74rem;
+  border-radius: 6px;
+  position: relative;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  text-decoration: none;
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  left: 0.6rem;
+  right: 0.6rem;
+  bottom: 0.14rem;
+  height: 2px;
+  background: linear-gradient(90deg, #f1ca55, #b8860b);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.22s ease;
+}
+
+.navbar__link:hover {
+  color: #ffd86b;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.navbar__link:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar__link--active {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, rgba(200, 16, 46, 0.78), rgba(123, 10, 30, 0.88)) !important;
+  box-shadow: 0 4px 14px rgba(200, 16, 46, 0.32);
+  font-weight: 700 !important;
+}
+
+.navbar__link--active::after {
+  transform: scaleX(1);
+}
+
+/* --- CTA Button --- */
+.navbar__cta {
+  white-space: nowrap;
+  font-size: 0.83rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  border-radius: 7px;
+  padding: 0.5rem 0.95rem;
+  text-decoration: none;
+  box-shadow: 0 6px 14px rgba(200, 16, 46, 0.3);
+}
+
+/* --- Calligraphy Slogan --- */
+.navbar__slogan {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.1;
+  margin-left: 0.2rem;
+}
+
+.navbar__slogan-line1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.24rem;
+  background: linear-gradient(90deg, #C8102E, #8B0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.6px;
+}
+
+.navbar__slogan-line2 {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: 'Pacifico', cursive;
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
+.navbar__slogan-strike {
+  font-family: 'Pacifico', cursive;
+  color: #d45b70;
+  text-decoration: line-through;
+  text-decoration-color: rgba(255, 255, 255, 0.75);
+  text-decoration-thickness: 2px;
+  opacity: 0.88;
+}
+
+.navbar__slogan-namdu {
+  font-family: 'Pacifico', cursive;
+  background: linear-gradient(90deg, #E6B014, #ff9900);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* --- Hamburger --- */
+.navbar__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #f2f2f2;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+/* --- Mobile Drawer --- */
+.navbar__drawer {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #101010 0%, #171717 100%);
+  border-top: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.navbar__drawer--open {
+  max-height: 420px;
+  padding: 0.5rem 1.5rem 1.5rem;
+}
+
+.navbar__drawer-link {
+  color: #f0f0f0;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navbar__drawer-link:hover,
+.navbar__drawer-link--active {
+  color: #ffd86b;
+}
+
+.navbar__drawer-cta {
+  margin-top: 1rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .navbar__container {
+    padding: 0 1rem 0 0.45rem;
+    gap: 0.8rem;
+  }
+
+  .navbar__logo-img {
+    height: 48px;
+  }
+
+  .navbar__slogan-line1 {
+    font-size: 0.92rem;
+  }
+
+  .navbar__slogan-line2 {
+    font-size: 0.79rem;
+  }
+
+  .navbar__links,
+  .navbar__cta {
+    display: none;
+  }
+
+  .navbar__hamburger {
+    display: block;
+    margin-left: auto;
+  }
+}
