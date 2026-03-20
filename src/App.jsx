@@ -8,6 +8,7 @@ import Schedule from './pages/Schedule';
 import Stats from './pages/Stats';
 import News from './pages/News';
 import FanZone from './pages/FanZone';
+import ChatWidget from './components/chat/ChatWidget';
 import './index.css';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path="/fanzone" element={<FanZone />} />
           </Routes>
         </main>
+        <ChatWidget />
         <Footer />
       </div>
     </Router>

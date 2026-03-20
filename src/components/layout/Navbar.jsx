@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Flame } from 'lucide-react';
 import './Navbar.css';
 
 const navLinks = [
@@ -25,9 +25,9 @@ function Navbar() {
   return (
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__container">
-        {/* Brand group — logo + slogan pinned left */}
+        {/* Left Brand (restored earlier style) */}
         <div className="navbar__brand">
-          <NavLink to="/" className="navbar__logo">
+          <NavLink to="/" className="navbar__logo" aria-label="RCB Home">
             <div className="navbar__logo-stack">
               <img
                 src="https://tse1.mm.bing.net/th/id/OIP.HQ9AYIAOfZTllPdhGSFRbAAAAA?rs=1&pid=ImgDetMain&o=7&rm=30"
@@ -48,13 +48,12 @@ function Navbar() {
             </div>
           </NavLink>
 
-          {/* Calligraphy Slogan */}
           <div className="navbar__slogan">
             <span className="navbar__slogan-line1">Ee Sala Cup</span>
             <span className="navbar__slogan-line2">
               <span className="navbar__slogan-strike">Namde</span>
               {' '}
-              <span className="navbar__slogan-namdu">Namdu </span>
+              <span className="navbar__slogan-namdu">Namdu</span>
             </span>
           </div>
         </div>
@@ -74,6 +73,14 @@ function Navbar() {
             </NavLink>
           ))}
         </nav>
+
+        {/* Center Brand */}
+        <NavLink to="/" className="navbar__center-brand" aria-label="PlayBold Hub Home">
+          <span className="navbar__center-icon" aria-hidden="true">
+            <Flame size={14} />
+          </span>
+          <span className="navbar__center-text">PlayBold Hub</span>
+        </NavLink>
 
         {/* CTA Button */}
         <a
